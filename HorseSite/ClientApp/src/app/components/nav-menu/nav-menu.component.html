@@ -1,0 +1,78 @@
+<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 headcolor"
+  >
+    <div class="menu-container">
+      <div class="menu-separator">
+        <div class="separators">
+          <div class="navhead">
+            <a class="navbar-brand" [routerLink]="['/']">HorseSite</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <button type="button" class="btn btn-dark add-horse">
+              Add Horse
+            </button>
+          </div>
+        </div>
+        <div
+          class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+          [ngClass]="{ show: isExpanded }"
+        >
+          <ul class="navbar-nav flex-grow">
+            <li
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+            <div class="dropdown">
+              <button (click)="dropDownDBClick()" class="dropbtn">Horse Database</button>
+              <div id="DBdrop" class="dropdown-content">
+                <a href="#">Pedigree</a>
+                <a href="#">Progeny</a>
+                <a href="#">Brothers/Sisters</a>
+              </div>
+            </div>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <div class="dropdown">
+                <button (click)="dropDownMPClick()" class="dropbtn">Horse Marketplace</button>
+                <div id="MPdrop" class="dropdown-content">
+                  <a href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <div class="dropdown">
+                <button (click)="dropDownDLClick()" class="dropbtn">Horse Dilution</button>
+                <div id="DLdrop" class="dropdown-content">
+                  <a href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-grow">
+            <li class="nav-item">
+              <a class="nav-link text-dark" [routerLink]="['/Profile']"
+                >Profile</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
