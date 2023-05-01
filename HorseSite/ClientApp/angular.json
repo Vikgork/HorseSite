@@ -28,6 +28,8 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/bootstrap-icons/font/bootstrap-icons.css",
+              "src/bootstrap-icons/font/bootstrap-icons.min.css",
               "src/styles.css"
             ],
             "scripts": []
