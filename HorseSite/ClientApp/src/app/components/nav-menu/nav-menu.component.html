@@ -19,8 +19,8 @@
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            <button type="button" class="btn btn-dark add-horse">
-              Add Horse
+            <button type="button" class="btn btn-dark add-horse" [routerLink]="['/AddHorse']">
+              <i class="bi bi-plus-circle"></i> Add Horse
             </button>
           </div>
         </div>
@@ -28,49 +28,111 @@
           class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
           [ngClass]="{ show: isExpanded }"
         >
-          <ul class="navbar-nav flex-grow">
-            <li
-              class="nav-item"
-              [routerLinkActive]="['link-active']"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >
-            <div class="dropdown">
-              <button (click)="dropDownDBClick()" class="dropbtn">Horse Database</button>
-              <div id="DBdrop" class="dropdown-content">
-                <a href="#">Pedigree</a>
-                <a href="#">Progeny</a>
-                <a href="#">Brothers/Sisters</a>
-              </div>
-            </div>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['link-active']">
-              <div class="dropdown">
-                <button (click)="dropDownMPClick()" class="dropbtn">Horse Marketplace</button>
-                <div id="MPdrop" class="dropdown-content">
-                  <a href="#">1</a>
-                  <a href="#">2</a>
-                  <a href="#">3</a>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['link-active']">
-              <div class="dropdown">
-                <button (click)="dropDownDLClick()" class="dropbtn">Horse Dilution</button>
-                <div id="DLdrop" class="dropdown-content">
-                  <a href="#">1</a>
-                  <a href="#">2</a>
-                  <a href="#">3</a>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul class="navbar-nav flex-grow">
-            <li class="nav-item">
-              <a class="nav-link text-dark" [routerLink]="['/Profile']"
-                >Profile</a
+          <div class="menu-btn-group">
+            <div class="btn-group menu-btn-item" dropdown>
+              <button
+                id="button-animated-DB"
+                dropdownToggle
+                type="button"
+                class="btn btn-outline-light dropdown-toggle"
+                aria-controls="dropdown-animated-DB"
               >
-            </li>
-          </ul>
+                <i class="bi bi-database" style="margin-right: 3px"></i>Horse
+                Database <span class="caret"></span>
+              </button>
+              <ul
+                id="dropdown-animated-DB"
+                *dropdownMenu
+                class="dropdown-menu"
+                role="menu"
+                aria-labelledby="button-animated-DB"
+              >
+                <li role="menuitem">
+                  <a class="dropdown-item" href="#">Pedigree</a>
+                </li>
+                <li role="menuitem">
+                  <a class="dropdown-item" href="#">Progeny</a>
+                </li>
+                <li role="menuitem">
+                  <a class="dropdown-item" href="#">Sisters\Brothers</a>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group menu-btn-item" dropdown>
+              <button
+                id="button-animated-MP"
+                dropdownToggle
+                type="button"
+                class="btn btn-outline-light dropdown-toggle"
+                aria-controls="dropdown-animated-MP"
+              >
+                <i class="bi bi-briefcase"></i> Horse Marketpalce
+                <span class="caret"></span>
+              </button>
+              <ul
+                id="dropdown-animated-MP"
+                *dropdownMenu
+                class="dropdown-menu"
+                role="menu"
+                aria-labelledby="button-animated-MP"
+              >
+                <li role="menuitem">
+                  <a class="dropdown-item" href="#">Task 1</a>
+                </li>
+                <li role="menuitem">
+                  <a class="dropdown-item" href="#">Task 2</a>
+                </li>
+                <li role="menuitem">
+                  <a class="dropdown-item" href="#">Task 3</a>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group menu-btn-item" dropdown>
+              <button
+                id="button-animated-BD"
+                dropdownToggle
+                type="button"
+                class="btn btn-outline-light dropdown-toggle"
+                aria-controls="dropdown-animated-BD"
+              >
+                Breeding <span class="caret"></span>
+              </button>
+              <ul
+                id="dropdown-animated-BD"
+                *dropdownMenu
+                class="dropdown-menu"
+                role="menu"
+                aria-labelledby="button-animated-BD"
+              >
+                <li role="menuitem">
+                  <a class="dropdown-item" href="#">Task 1</a>
+                </li>
+                <li role="menuitem">
+                  <a class="dropdown-item" href="#">Task 2</a>
+                </li>
+                <li role="menuitem">
+                  <a class="dropdown-item" href="#">Task 3</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <ul class="navbar-nav flex-grow">
+            <li class="nav-item account-icn">
+            
+          <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" (mouseleave)="Hide()" (mouseenter)="Show()">
+               <a class="nav-link text-dark" id="basic-link" dropdownToggle aria-controls="basic-link-dropdown" [routerLink]="['/Profile']"
+                ><i class="bi bi-person-circle" style="color:white"></i> <span class="prof">Profile</span></a
+              >
+            <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu uninset" 
+                role="menu" aria-labelledby="basic-link"> 
+              <li *ngFor="let choice of items">
+                <a class="dropdown-item" href="#">{{choice}}</a>
+              </li>
+            </ul>
+          </span>
+        </li>
+      </ul>
         </div>
       </div>
     </div>

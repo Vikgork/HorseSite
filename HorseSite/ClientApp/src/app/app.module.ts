@@ -5,6 +5,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import {
   NavMenuComponent,
@@ -26,6 +27,7 @@ import {
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
     routing,
   ],
   providers: [HttpClient, { provide: LOCALE_ID, useValue: 'ru' }],
