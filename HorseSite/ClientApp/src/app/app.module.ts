@@ -6,13 +6,15 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-
+import { CommonModule } from '@angular/common';
 import {
   NavMenuComponent,
   FetchDataComponent,
   CounterComponent,
   HomeComponent,
+  AddHorseComponent,
 } from './components';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import {
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
+    AddHorseComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,6 +31,7 @@ import {
     FormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
+    CommonModule,
     routing,
   ],
   providers: [HttpClient, { provide: LOCALE_ID, useValue: 'ru' }],

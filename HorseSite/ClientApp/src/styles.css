@@ -1,8 +1,15 @@
+.container {
+  max-width: 1920px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 a {
   color: #0366d6;
 }
-
+.block{
+  display: block;
+}
 code {
   color: #e01a76;
 }
@@ -12,4 +19,3 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-

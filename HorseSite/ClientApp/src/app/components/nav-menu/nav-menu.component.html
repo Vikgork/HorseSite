@@ -1,6 +1,6 @@
 <header>
   <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 headcolor"
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow headcolor"
   >
     <div class="menu-container">
       <div class="menu-separator">
@@ -19,7 +19,11 @@
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            <button type="button" class="btn btn-dark add-horse" [routerLink]="['/AddHorse']">
+            <button
+              type="button"
+              class="btn btn-dark add-horse"
+              [routerLink]="['/AddHorse']"
+            >
               <i class="bi bi-plus-circle"></i> Add Horse
             </button>
           </div>
@@ -119,20 +123,37 @@
 
           <ul class="navbar-nav flex-grow">
             <li class="nav-item account-icn">
-            
-          <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()" (mouseleave)="Hide()" (mouseenter)="Show()">
-               <a class="nav-link text-dark" id="basic-link" dropdownToggle aria-controls="basic-link-dropdown" [routerLink]="['/Profile']"
-                ><i class="bi bi-person-circle" style="color:white"></i> <span class="prof">Profile</span></a
+              <span
+                dropdown
+                (onShown)="onShown()"
+                (onHidden)="onHidden()"
+                (isOpenChange)="isOpenChange()"
+                (mouseleave)="Hide()"
+                (mouseenter)="Show()"
               >
-            <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu uninset" 
-                role="menu" aria-labelledby="basic-link"> 
-              <li *ngFor="let choice of items">
-                <a class="dropdown-item" href="#">{{choice}}</a>
-              </li>
-            </ul>
-          </span>
-        </li>
-      </ul>
+                <a
+                  class="nav-link text-dark"
+                  id="basic-link"
+                  dropdownToggle
+                  aria-controls="basic-link-dropdown"
+                  [routerLink]="['/Profile']"
+                  ><i class="bi bi-person-circle" style="color: white"></i>
+                  <span class="prof">Profile</span></a
+                >
+                <ul
+                  id="basic-link-dropdown"
+                  *dropdownMenu
+                  class="dropdown-menu uninset"
+                  role="menu"
+                  aria-labelledby="basic-link"
+                >
+                  <li *ngFor="let choice of items">
+                    <a class="dropdown-item" href="#">{{ choice }}</a>
+                  </li>
+                </ul>
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
