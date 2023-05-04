@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HorseSite.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HorseSite.Controllers
 {

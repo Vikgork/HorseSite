@@ -2,7 +2,53 @@
   <div class="add-horse-title" *ngIf="trySearch">
     <h1 id="add-new-horse">Add new horse</h1>
   </div>
+
   <div class="add-horse-main">
+    <div class="searched-horse-table" *ngIf="!trySearch">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Breed</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Father</th>
+            <th scope="col">Mother</th>
+            <th scrop="col">Choose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let horse of itemsRequest.items" class="table-horse-row">
+            <th scope="row">{{ horse.id }}</th>
+            <td>
+              <a routerLink="detailshorse/{{ horse.id }}">{{ horse.name }}</a>
+            </td>
+            <td>{{ horse.breed }}</td>
+            <td>{{ horse.date }}</td>
+            <td>
+              <a routerLink="detailshorse/{{ horse.fid }}">{{ horse.fName }}</a>
+            </td>
+            <td>
+              <a routerLink="detailshorse/{{ horse.mid }}">{{ horse.mName }}</a>
+            </td>
+            <td>
+              <div class="btn-group">
+                <button type="button" class="btn btn-outlook-primary">
+                  <i class="bi bi-check-lg" style="color: green;"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-menu">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i><span> Add new Horse</span>
+          </button>
+        </div>
+      </div>
+    </div>
     <form *ngIf="trySearch">
       <div class="form-title">
         <span>Try find your horse</span>

@@ -1,4 +1,4 @@
-namespace HorseSite
+namespace HorseSite.Models
 {
     public class WeatherForecast
     {

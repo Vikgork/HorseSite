@@ -13,6 +13,7 @@ import {
   CounterComponent,
   HomeComponent,
   AddHorseComponent,
+  HorseDetailsComponent,
 } from './components';
 
 
@@ -23,7 +24,8 @@ import {
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    AddHorseComponent
+    AddHorseComponent,
+    HorseDetailsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
