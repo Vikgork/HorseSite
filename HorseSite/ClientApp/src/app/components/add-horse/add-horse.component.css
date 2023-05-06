@@ -1,0 +1,57 @@
+.add-horse-title{
+    background-color: #f2f2f2;
+    width:100% !important;
+    height: 75px;
+    border-bottom: solid 1px #d2d4d4;
+}
+.add-horse-container{
+    width:100%;
+    height: 100%;
+}
+.table-horse-row:hover{
+    background-color: #3595f6;
+    transform: scale(1.015);
+}
+.add-horse-main{
+    margin:0 20%;
+    margin-top:20px;
+    height: 100%;
+    background-color: #f2f2f2;
+    border: solid 1px #d2d4d4;
+    padding: 20px;
+}
+.add-horse-find{
+ padding:15px;
+}
+.breed-input-menu{
+    display: none;
+}
+.breed-menu{
+    width:100%;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.form-footer{
+    display: grid;
+}
+.show{
+    display: block;
+}
+.breed-menu-item{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+.breed-menu-item:hover{
+    background-color:#3595f6 ;
+}
+.find-horse-element{
+    margin-top: 20px;
+}
+#add-new-horse{
+    color: #333;
+    display: inline-block;
+    font-weight: 250;
+    margin: 6px 2%;
+    padding: 4px 4px;
+}

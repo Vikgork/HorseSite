@@ -3,6 +3,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+//builder.Services.AddCors(options => options.AddPolicy(name: "HorseSiteOrigins",
+//    policy =>
+//    {
+//        policy.WithOrigins("https://localhost:44495").AllowAnyMethod().AllowAnyHeader();
+//    }));
 
 var app = builder.Build();
 
@@ -16,6 +21,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+//app.UseCors("HorseSiteOrigins");
 
 
 app.MapControllerRoute(
