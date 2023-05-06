@@ -5,7 +5,7 @@
     "ng": "ng",
     "prestart": "node aspnetcore-https",
     "start": "run-script-os",
-    "start:windows": "ng serve --port 44495 --ssl --ssl-cert C:\\Users\\vgork\\AppData\\Roaming\\ASP.NET\\https\\horsesite.pem --ssl-key C:\\Users\\vgork\\AppData\\Roaming\\ASP.NET\\https\\horsesite.key",
+    "start:windows": "ng serve --port 44495 --ssl --ssl-cert certificates\\horsesite.pem --ssl-key certificates\\horsesite.key",
     "start:default": "ng serve --port 44495 --ssl --ssl-cert $HOME/.aspnet/https/${npm_package_name}.pem --ssl-key $HOME/.aspnet/https/${npm_package_name}.key",
     "build": "ng build",
     "build:ssr": "ng run HorseSite:server:dev",
