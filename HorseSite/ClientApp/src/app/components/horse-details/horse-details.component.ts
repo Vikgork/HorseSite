@@ -22,10 +22,10 @@ export class HorseDetailsComponent implements OnInit {
             switchMap(params => params.getAll('id'))
         )
         .subscribe(data=> this.id = +data);
-        this.getHorse();
+        this.getHorseById();
       }
 
-    getHorse(){
+    getHorseById(){
       this.horseService.getHorse(this.id).subscribe((horse: Horseshort)=> {
         this.horse = horse;
         console.log(horse);
