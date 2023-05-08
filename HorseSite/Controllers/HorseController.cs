@@ -1,4 +1,6 @@
-﻿ using HorseSite.Models;
+﻿using HorseSite.DB;
+using HorseSite.Models;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,10 +13,13 @@ namespace HorseSite.Controllers
 
         private readonly ILogger<HorseController> _logger;
 
+        private readonly IGenericRepository<HorseShort> _horseRepository;
+
         public List<HorseShort> horses;
-        public HorseController(ILogger<HorseController> logger)
+        public HorseController(ILogger<HorseController> logger,MainContext context)
         {
             _logger = logger;
+            _horseRepository = new EFGenericRepository<HorseShort>(context);
             horses = new List<HorseShort>
             {
                 new HorseShort()
