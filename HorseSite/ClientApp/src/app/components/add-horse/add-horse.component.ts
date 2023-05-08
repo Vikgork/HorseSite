@@ -38,7 +38,7 @@ export class AddHorseComponent implements OnInit {
       .filter(function (elem, index, self) {
         return index === self.indexOf(elem);
       })
-      .filter((x) => x.toLowerCase().includes(search.toLocaleLowerCase()))
+      .filter((breed) => breed.toLowerCase().includes(search.toLocaleLowerCase()))
       .sort((x, y) =>
         this.compareString(
           x.toLocaleLowerCase(),
